@@ -50,7 +50,8 @@ public class basic {
 
         //non primitive data types
         System.out.println("Below are non - primitive data types - ");
-        String name = "Ashish";
+        String name = new String();
+        name = "Ashish";
         String surname = "Wankhade";
 
         data_type = printType(name);

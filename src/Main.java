@@ -16,7 +16,7 @@ public class Main {
                 break;
             }
 
-//            System.out.println(arr);
+            System.out.println(arr);
         }
 //        System.out.println(count);
     }
