@@ -1,8 +1,6 @@
 package Students;
 
-import java.io.Serializable;
-
-public class Student implements Serializable {
+public class Student {
     private int id;
     private String name;
     private int age;
@@ -27,8 +25,8 @@ public class Student implements Serializable {
         return age;
     }
 
-    public String subjects() {
-        return subjects();
+    public String[] getSubjects() {
+        return subjects;
     }
 
     public void setName(String name) {
@@ -49,5 +47,18 @@ public class Student implements Serializable {
                 "Name: " + name +
                 "Age: " + age +
                 "Subjects: " + subjects;
+    }
+
+    public String toCSV(){
+        return id + ", " + name + ", " + age + ", " + subjects;
+    }
+
+    public Student fromCSV(String data) {
+        String[] data_parts = data.split(",");
+        int id = Integer.parseInt(data_parts[0]);
+        String name = data_parts[1];
+        int age = Integer.parseInt(data_parts[2]);
+        String[] subjects = new String[]{data_parts[3]};
+        return new Student(id, name, age, subjects);
     }
 }

@@ -8,7 +8,12 @@ public class ManagementSystem {
         System.out.println("<< Welcome to your Students Management System >>");
 
         while(true) {
-            System.out.println("\n1. Add Student\n2. View All Students\n3. Search Student\n4. Update Student\n5. Delete Student\n6. Exit\n");
+            System.out.println("\n1. Add Student" +
+                    "\n2. View All Students" +
+                    "\n3. Search Student" +
+                    "\n4. Update Student" +
+                    "\n5. Delete Student" +
+                    "\n6. Exit\n");
             System.out.println("Please provide the action to perform");
             String userIp = sc.nextLine();
 
