@@ -19,8 +19,8 @@ public class Main {
 
                 case 4:
                     System.out.println("Closing the management system");
-                    System.exit(0);
-                    break;
+//                    System.exit(0);
+                    return;
                 case 5:
                     System.out.println("Invalid action performed");
                     break;
