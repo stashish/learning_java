@@ -53,7 +53,7 @@ public class Student {
         return id + ", " + name + ", " + age + ", " + subjects;
     }
 
-    public Student fromCSV(String data) {
+    public static Student fromCSV(String data) {
         String[] data_parts = data.split(",");
         int id = Integer.parseInt(data_parts[0]);
         String name = data_parts[1];

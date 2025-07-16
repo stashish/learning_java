@@ -1,10 +1,17 @@
 package Students;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class ManagementSystem {
+    static Scanner sc = new Scanner(System.in);
+    public Map<Integer, Student> studentsMap;
+
+    public ManagementSystem() {
+
+    }
+
     public void start() {
-        Scanner sc = new Scanner(System.in);
         System.out.println("<< Welcome to your Students Management System >>");
 
         while(true) {
@@ -52,7 +59,23 @@ public class ManagementSystem {
     }
 
     private static void addStudent() {
+        System.out.println("Enter Student Id.");
+        int nsId = sc.nextInt();
+        sc.nextLine();
 
+        System.out.println("Enter Student Name");
+        String nsName = sc.nextLine();
+
+        System.out.println("Enter Student Id.");
+        int nsAge = sc.nextInt();
+        sc.nextLine();
+
+        System.out.println("Enter Student Id.");
+        String[] nsSubjects = new String[]{sc.nextLine()};
+
+        Student nStudent = new Student(nsId, nsName, nsAge, nsSubjects);
+
+        System.out.println("New student added");
     }
 
     private static void viewAllStudents() {
@@ -68,10 +91,6 @@ public class ManagementSystem {
     }
 
     private static void deleteStudent() {
-
-    }
-
-    private static void saveToFile() {
 
     }
 }
