@@ -4,14 +4,17 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class ManagementSystem {
-    static Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
     public Map<Integer, Student> studentsMap;
 
-    public ManagementSystem() {
+    private final CSVManager csvManager = new CSVManager();
 
+    public ManagementSystem () {
+        studentsMap = csvManager.loadStudentsData();
     }
 
     public void start() {
+//        studentsMap = csvManager.loadStudentsData();
         System.out.println("<< Welcome to your Students Management System >>");
 
         while(true) {
@@ -44,7 +47,7 @@ public class ManagementSystem {
                         deleteStudent();
                         break;
                     case 6:
-                        saveToFile(); //saving data before exiting...
+//                        saveToFile(); //saving data before exiting...
                         System.out.println("Closing the management system...");
 //                        System.exit(0);
                         return;
@@ -58,39 +61,45 @@ public class ManagementSystem {
         }
     }
 
-    private static void addStudent() {
-        System.out.println("Enter Student Id.");
+    private void addStudent() {
+        System.out.println("Enter Student's Id.");
         int nsId = sc.nextInt();
         sc.nextLine();
 
-        System.out.println("Enter Student Name");
+        System.out.println("Enter Student's Name");
         String nsName = sc.nextLine();
 
-        System.out.println("Enter Student Id.");
+        System.out.println("Enter Student's Age");
         int nsAge = sc.nextInt();
         sc.nextLine();
 
-        System.out.println("Enter Student Id.");
+        System.out.println("Enter Student's Subjects");
         String[] nsSubjects = new String[]{sc.nextLine()};
 
         Student nStudent = new Student(nsId, nsName, nsAge, nsSubjects);
+        studentsMap.put(nsId, nStudent);
 
-        System.out.println("New student added");
+        System.out.println("New student added & saved");
     }
 
-    private static void viewAllStudents() {
+    private void viewAllStudents() {
+        if(studentsMap.isEmpty()) {
+            System.out.println("No students in the management records");
+        }
+        for (Student student : studentsMap.values()) {
+            System.out.println(student);
+        }
+    }
+
+    private void searchStudent() {
 
     }
 
-    private static void searchStudent() {
+    private void updateStudent() {
 
     }
 
-    private static void updateStudent() {
-
-    }
-
-    private static void deleteStudent() {
+    private void deleteStudent() {
 
     }
 }
