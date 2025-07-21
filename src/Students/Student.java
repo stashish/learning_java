@@ -43,9 +43,9 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Roll No: " + id +
-                "Name: " + name +
-                "Age: " + age +
+        return "Roll No: " + id + ", " +
+                "Name: " + name + ", " +
+                "Age: " + age + ", " +
                 "Subjects: " + subjects;
     }
 
@@ -53,12 +53,12 @@ public class Student {
         return id + ", " + name + ", " + age + ", " + subjects;
     }
 
-    public static Student fromCSV(String data) {
-        String[] data_parts = data.split(",");
-        int id = Integer.parseInt(data_parts[0]);
-        String name = data_parts[1];
-        int age = Integer.parseInt(data_parts[2]);
-        String[] subjects = new String[]{data_parts[3]};
+    public static Student fromCSV(String studentData) {
+        String[] student_data_parts = studentData.split(",");
+        int id = Integer.parseInt(student_data_parts[0]);
+        String name = student_data_parts[1];
+        int age = Integer.parseInt(student_data_parts[2]);
+        String[] subjects = new String[]{student_data_parts[3]};
         return new Student(id, name, age, subjects);
     }
 }
